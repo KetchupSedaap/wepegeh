@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwhw66i57mqfq"]
+
+[ext_resource type="PackedScene" uid="uid://bp00pa82uua0k" path="res://Scene/meja.tscn" id="1_jv8gs"]
+[ext_resource type="Script" uid="uid://dahjqwaifha04" path="res://Scene/main_game.gd" id="1_vh4eo"]
+[ext_resource type="PackedScene" uid="uid://ctov5pchhacda" path="res://Scene/nampan.tscn" id="2_htkpn"]
+[ext_resource type="PackedScene" uid="uid://cbaqyu576xdrg" path="res://Scene/chartest.tscn" id="4_1btii"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_htkpn"]
+size = Vector3(2.23529, 0.91394, 1.37015)
+
+[sub_resource type="Curve3D" id="Curve3D_htkpn"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 16.6635, 0, 3.93324, 0, 0, 0, 0, 0, 0, 16.6635, 0, -17.6158, 0, 0, 0, 0, 0, 0, 0.926983, 0, -17.7576, 0, 0, 0, 0, 0, 0, 0.563951, 0, -9.23002),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("camera_1", "camera_2")]
+script = ExtResource("1_vh4eo")
+scene_makanan = ExtResource("2_htkpn")
+camera_1 = NodePath("CameraMain")
+camera_2 = NodePath("CameraCook")
+
+[node name="Meja" parent="." instance=ExtResource("1_jv8gs")]
+
+[node name="Ayam" type="Area3D" parent="Meja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.814542, 5.17663, -2.01537)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meja/Ayam"]
+shape = SubResource("BoxShape3D_htkpn")
+debug_color = Color(0.918698, 0.284679, 7.70092e-07, 0.654902)
+
+[node name="Brokoli" type="Area3D" parent="Meja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51979, 5.17663, -2.01537)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meja/Brokoli"]
+shape = SubResource("BoxShape3D_htkpn")
+debug_color = Color(0.918698, 0.284679, 7.70092e-07, 0.654902)
+
+[node name="Tempe" type="Area3D" parent="Meja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86896, 5.17663, -2.01537)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meja/Tempe"]
+shape = SubResource("BoxShape3D_htkpn")
+debug_color = Color(0.918698, 0.284679, 7.70092e-07, 0.654902)
+
+[node name="Wortel" type="Area3D" parent="Meja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1589, 5.17663, -2.01537)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meja/Wortel"]
+shape = SubResource("BoxShape3D_htkpn")
+debug_color = Color(0.918698, 0.284679, 7.70092e-07, 0.654902)
+
+[node name="Nasi" type="Area3D" parent="Meja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.814542, 5.17663, -0.540891)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meja/Nasi"]
+shape = SubResource("BoxShape3D_htkpn")
+debug_color = Color(0.918698, 0.284679, 7.70092e-07, 0.654902)
+
+[node name="Kentang" type="Area3D" parent="Meja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51979, 5.17663, -0.543083)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meja/Kentang"]
+shape = SubResource("BoxShape3D_htkpn")
+debug_color = Color(0.918698, 0.284679, 7.70092e-07, 0.654902)
+
+[node name="Semangka" type="Area3D" parent="Meja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86896, 5.17663, -0.544369)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meja/Semangka"]
+shape = SubResource("BoxShape3D_htkpn")
+debug_color = Color(0.918698, 0.284679, 7.70092e-07, 0.654902)
+
+[node name="CameraCook" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.299191, 0.954193, 0, -0.954193, 0.299191, -0.729818, 8.69373, 0.898617)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.74539, 0.414498)
+
+[node name="CameraMain" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.663218, 7.49258, 2.71579)
+current = true
+
+[node name="NampanSpawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49073, 5.53879, 1.85957)
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_htkpn")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6635, 0, 3.93324)
+loop = false
+
+[node name="Node3D" parent="Path3D/PathFollow3D" instance=ExtResource("4_1btii")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[connection signal="input_event" from="Meja/Ayam" to="." method="_on_ayam_input_event"]
+[connection signal="input_event" from="Meja/Brokoli" to="." method="_on_brokoli_input_event"]
+[connection signal="input_event" from="Meja/Tempe" to="." method="_on_tempe_input_event"]
+[connection signal="input_event" from="Meja/Wortel" to="." method="_on_wortel_input_event"]
+[connection signal="input_event" from="Meja/Nasi" to="." method="_on_nasi_input_event"]
+[connection signal="input_event" from="Meja/Kentang" to="." method="_on_kentang_input_event"]
+[connection signal="input_event" from="Meja/Semangka" to="." method="_on_semangka_input_event"]

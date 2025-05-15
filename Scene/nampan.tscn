@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctov5pchhacda"]
+
+[ext_resource type="PackedScene" uid="uid://bi1mkox2kqhiw" path="res://Model/TATANAN NAMPAN.blend" id="1_ombvn"]
+[ext_resource type="Script" uid="uid://bd2hqjwnjybpo" path="res://Scene/nampan.gd" id="1_qxhg1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qxhg1"]
+size = Vector3(2.74353, 0.505859, 1.96381)
+
+[node name="Nampan" type="Node3D"]
+script = ExtResource("1_qxhg1")
+
+[node name="TATANAN NAMPAN" parent="." instance=ExtResource("1_ombvn")]
+
+[node name="WORTEL_004" parent="TATANAN NAMPAN" index="0"]
+visible = false
+
+[node name="SEMAN9KA_002" parent="TATANAN NAMPAN" index="2"]
+visible = false
+
+[node name="SAYUR BROKOLI_010" parent="TATANAN NAMPAN" index="3"]
+visible = false
+
+[node name="KARBO KENTAN9_007" parent="TATANAN NAMPAN" index="5"]
+visible = false
+
+[node name="TEMPE" parent="TATANAN NAMPAN" index="6"]
+visible = false
+
+[node name="AYAM_007" parent="TATANAN NAMPAN" index="7"]
+visible = false
+
+[node name="NASI_002" parent="TATANAN NAMPAN" index="8"]
+visible = false
+
+[node name="NASI1146" parent="TATANAN NAMPAN" index="9"]
+transform = Transform3D(0.04421, 0, 0, 0, 0.081859, 0, 0, 0, 0.04421, 0.125371, 0.12677, -0.352001)
+visible = false
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.283752, 0.24707, 0.0511169)
+shape = SubResource("BoxShape3D_qxhg1")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
+
+[editable path="TATANAN NAMPAN"]

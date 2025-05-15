@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp00pa82uua0k"]
+
+[ext_resource type="PackedScene" uid="uid://ch17vdplp18ok" path="res://Model/MEJA MAKAN.blend" id="1_hddqk"]
+[ext_resource type="PackedScene" uid="uid://doeuiapmqghsg" path="res://Model/BACKGROUND PAGI.blend" id="2_3fk4s"]
+
+[node name="Meja" type="Node3D"]
+
+[node name="MEJA MAKAN" parent="." instance=ExtResource("1_hddqk")]
+
+[node name="BACKGROUND PAGI" parent="." instance=ExtResource("2_3fk4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.566639, -16.3484, -33.3806)
+
+[node name="Point" parent="BACKGROUND PAGI" index="26"]
+light_energy = 0.544
+
+[node name="Point_001" parent="BACKGROUND PAGI" index="27"]
+light_energy = 0.272
+
+[node name="Point_002" parent="BACKGROUND PAGI" index="29"]
+light_energy = 0.544
+
+[node name="Sun" parent="BACKGROUND PAGI" index="32"]
+light_energy = 0.41
+
+[editable path="BACKGROUND PAGI"]
