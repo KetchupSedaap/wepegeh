@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://bviyjx7urt2lm"]
+
+[ext_resource type="Texture2D" uid="uid://b1021c7fqognj" path="res://UI/TITLE.png" id="1_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://r220tlee68w1" path="res://UI/Menu_Start.png" id="2_kbped"]
+[ext_resource type="Texture2D" uid="uid://0ws2xj82m0kq" path="res://UI/Menu_Setting.png" id="3_fj5cn"]
+[ext_resource type="Texture2D" uid="uid://cnrg4j8e26sk0" path="res://UI/Menu_Exit.png" id="4_iy58a"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 314.0
+offset_top = 648.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 0.225)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -412.0
+offset_top = -486.0
+offset_right = 124.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+theme_override_constants/separation = 30
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(80, 75)
+layout_mode = 2
+texture = ExtResource("1_ee4bf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_kbped")
+
+[node name="SettingButton" type="TextureButton" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_fj5cn")
+
+[node name="ExitButton" type="TextureButton" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_iy58a")

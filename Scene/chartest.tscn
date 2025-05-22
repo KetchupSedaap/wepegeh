@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbaqyu576xdrg"]
+[gd_scene load_steps=2 format=3 uid="uid://cbaqyu576xdrg"]
 
 [ext_resource type="PackedScene" uid="uid://gn6uts4e27dw" path="res://Model/CHAR_RIGCOWOK1.blend" id="1_kbx76"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kbx76"]
-size = Vector3(8.65894, 11.1431, 4.55786)
 
 [node name="Node3D" type="Node3D"]
 
@@ -221,11 +218,5 @@ bones/501/rotation = Quaternion(6.22988e-17, 1, 7.15676e-15, -5.52335e-07)
 bones/512/rotation = Quaternion(0.8134, 0.581021, 0.0163893, -0.0229513)
 bones/513/rotation = Quaternion(0, 1, 0, -4.33126e-07)
 bones/524/rotation = Quaternion(-0.5, 0.5, 0.5, -0.5)
-
-[node name="Receiver" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Receiver"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.198608, 5.07153, -0.0792236)
-shape = SubResource("BoxShape3D_kbx76")
 
 [editable path="CHAR_RIGCOWOK1"]

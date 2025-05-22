@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwhw66i57mqfq"]
+[gd_scene load_steps=8 format=3 uid="uid://cwhw66i57mqfq"]
 
 [ext_resource type="PackedScene" uid="uid://bp00pa82uua0k" path="res://Scene/meja.tscn" id="1_jv8gs"]
 [ext_resource type="Script" uid="uid://dahjqwaifha04" path="res://Scene/main_game.gd" id="1_vh4eo"]
@@ -14,6 +14,9 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1btii"]
+size = Vector3(9.82037, 2.43433, 3.52515)
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("camera_1", "camera_2")]
 script = ExtResource("1_vh4eo")
@@ -89,11 +92,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49073, 5.53879, 1.85957)
 curve = SubResource("Curve3D_htkpn")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6635, 0, 3.93324)
+transform = Transform3D(-0.999095, 0, 0.0425329, 0, 1, 0, -0.0425329, 0, -0.999095, 0.563951, 0, -9.23002)
+progress = 45.8215
 loop = false
 
 [node name="Node3D" parent="Path3D/PathFollow3D" instance=ExtResource("4_1btii")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206491, 8.72331, 0)
+collision_layer = 255
+collision_mask = 255
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.256115, 0.0838623, -0.231079)
+shape = SubResource("BoxShape3D_1btii")
+
+[node name="Nampan" parent="." instance=ExtResource("2_htkpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.28376, 0)
 
 [connection signal="input_event" from="Meja/Ayam" to="." method="_on_ayam_input_event"]
 [connection signal="input_event" from="Meja/Brokoli" to="." method="_on_brokoli_input_event"]
@@ -102,3 +119,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 
 [connection signal="input_event" from="Meja/Nasi" to="." method="_on_nasi_input_event"]
 [connection signal="input_event" from="Meja/Kentang" to="." method="_on_kentang_input_event"]
 [connection signal="input_event" from="Meja/Semangka" to="." method="_on_semangka_input_event"]
+
+[editable path="Path3D/PathFollow3D/Node3D"]
+[editable path="Path3D/PathFollow3D/Node3D/CHAR_RIGCOWOK1"]

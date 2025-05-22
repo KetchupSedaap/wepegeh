@@ -7,6 +7,12 @@ var makanan
 
 var is_cooking = false
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("test") and is_cooking:
+		swapcam()
+		is_cooking=false
+		makanan.on_play=true
+
 func swapcam():
 	CameraTransition.transition_camera3D(camera_1, camera_2)
 	var temp = camera_1

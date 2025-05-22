@@ -6,7 +6,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_qxhg1"]
 size = Vector3(2.74353, 0.505859, 1.96381)
 
-[node name="Nampan" type="Node3D"]
+[node name="Nampan" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 15
 script = ExtResource("1_qxhg1")
 
 [node name="TATANAN NAMPAN" parent="." instance=ExtResource("1_ombvn")]
@@ -36,12 +38,10 @@ visible = false
 transform = Transform3D(0.04421, 0, 0, 0, 0.081859, 0, 0, 0, 0.04421, 0.125371, 0.12677, -0.352001)
 visible = false
 
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.283752, 0.24707, 0.0511169)
 shape = SubResource("BoxShape3D_qxhg1")
 
-[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
 
 [editable path="TATANAN NAMPAN"]
